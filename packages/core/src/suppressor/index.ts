@@ -129,13 +129,27 @@ export class Suppressor {
     original.bodyPointerEvents = body.style.pointerEvents;
     body.style.pointerEvents = '';
 
-    const selectors = ['main', '#root', '#app', '#__next', '[role="main"]'];
+    const selectors = ['main', '#root', '#app', '#__next', '[role="main"]', '.App', '[data-test-id="app"]', '#__nuxt', '#___gatsby'];
     for (const sel of selectors) {
       const el = document.querySelector(sel) as HTMLElement | null;
       if (!el) continue;
       original[`${sel}_pe`] = el.style.pointerEvents;
       el.style.pointerEvents = '';
     }
+
+    // Also restore any element with inline pointer-events: none that covers most of viewport
+    const allFixed = document.querySelectorAll('[style*="pointer-events"]');
+    for (const el of allFixed) {
+      const htmlEl = el as HTMLElement;
+      if (htmlEl.style.pointerEvents === 'none') {
+        const rect = el.getBoundingClientRect();
+        if (rect.width > window.innerWidth * 0.5 && rect.height > window.innerHeight * 0.5) {
+          original[`dynamic_${el.tagName}_${el.className.slice(0, 30)}_pe`] = htmlEl.style.pointerEvents;
+          htmlEl.style.pointerEvents = '';
+        }
+      }
+    }
+
     return { type: SuppressionActionType.RESTORE_POINTER_EVENTS, target: body, originalState: original };
   }
 }

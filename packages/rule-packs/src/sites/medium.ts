@@ -16,5 +16,5 @@ export const medium: RulePack = {
   ],
   safeSelectors: ['nav', 'header', '[role="navigation"]'],
   scrollLockSelectors: ['body[style*="overflow: hidden"]'],
-  backdropSelectors: ['[class*="overlay"]'],
+  backdropSelectors: ['[class*="overlay-base"]', '[class*="modal"] [class*="overlay"]'],
 };

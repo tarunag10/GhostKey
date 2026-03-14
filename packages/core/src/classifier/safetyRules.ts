@@ -19,7 +19,6 @@ const SAFE_TEXT_PATTERNS = [
   /pay(ment)?/i, /checkout/i, /billing/i, /credit card/i, /debit card/i,
   /shipping/i, /order summary/i, /purchase/i,
   /upload/i, /file picker/i, /choose file/i,
-  /cookie/i, /consent/i, /privacy/i, /gdpr/i,
 ];
 
 export function isSafeElement(element: Element): boolean {
@@ -36,8 +35,8 @@ export function isSafeElement(element: Element): boolean {
   const text = (element.textContent || '').slice(0, 2000).toLowerCase();
   for (const pattern of SAFE_TEXT_PATTERNS) {
     if (pattern.test(text)) {
-      // Only safe if it looks like a real payment form, not just a mention
-      if (element.querySelector('input[type="text"], input[name*="card"], input[name*="cvv"]')) {
+      // Only safe if it has actual payment-specific inputs (not just any text input)
+      if (element.querySelector('input[name*="card"], input[name*="cvv"], input[name*="expir"], input[name*="billing"], [data-testid*="payment"]')) {
         return true;
       }
     }

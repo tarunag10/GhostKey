@@ -14,7 +14,7 @@ export const instagram: RulePack = {
     // Scroll-triggered login wall
     { selector: '[role="presentation"] [role="dialog"]', weight: 8, description: 'Scroll-triggered dialog' },
     { selector: '[class*="x1n2onr6"][role="dialog"]', weight: 8 },
-    { selector: '[role="dialog"]', weight: 6 },
+    { selector: '[role="dialog"]:not([aria-label*="Comment"]):not([aria-label*="Share"])', weight: 6 },
     { selector: '[class*="x1qjc9v5"]', weight: 5, description: 'Common IG modal wrapper class' },
     { selector: '[class*="xdt5ytf"] [role="dialog"]', weight: 8 },
     { selector: 'div[style*="height: 100%"][style*="width: 100%"][role="presentation"]', weight: 7 },

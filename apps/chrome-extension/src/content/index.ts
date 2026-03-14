@@ -30,13 +30,47 @@ async function init() {
 
   function scan() {
     const candidates = detector.scan(document);
+    let didSuppress = false;
     for (const candidate of candidates) {
       const decision = classifier.classify(candidate);
       if (decision.shouldSuppress) {
         logger.debug('Suppressing', candidate.element, 'reason:', decision.reason);
         suppressor.suppress(candidate, decision.actions);
+        didSuppress = true;
       }
     }
+    // After suppression, ensure page is interactive
+    if (didSuppress) {
+      restorePageInteractivity();
+    }
+  }
+
+  function restorePageInteractivity() {
+    // Remove overflow:hidden from body/html
+    for (const el of [document.body, document.documentElement]) {
+      if (el.style.overflow === 'hidden') el.style.overflow = '';
+      if (el.style.overflowY === 'hidden') el.style.overflowY = '';
+    }
+    // Remove pointer-events:none from large container elements
+    document.querySelectorAll('[style*="pointer-events: none"]').forEach((el) => {
+      const htmlEl = el as HTMLElement;
+      const rect = el.getBoundingClientRect();
+      if (rect.width > window.innerWidth * 0.3 && rect.height > window.innerHeight * 0.3) {
+        htmlEl.style.pointerEvents = '';
+      }
+    });
+    // Remove position:fixed overlays with high z-index that block clicks
+    document.querySelectorAll('[style*="z-index"]').forEach((el) => {
+      const htmlEl = el as HTMLElement;
+      const z = parseInt(getComputedStyle(el).zIndex, 10);
+      if (z > 999 && htmlEl.style.display === 'none') return; // already hidden
+      if (z > 999 && !el.textContent?.trim() && getComputedStyle(el).position === 'fixed') {
+        const rect = el.getBoundingClientRect();
+        if (rect.width > window.innerWidth * 0.8 && rect.height > window.innerHeight * 0.8) {
+          htmlEl.style.display = 'none';
+        }
+      }
+    });
   }
 
   // Initial scan
