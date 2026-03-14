@@ -16,6 +16,7 @@ const STRONG_PHRASES = [
   'sign in to continue', 'log in to continue', 'create an account to continue',
   'sign up to continue', 'join to see', 'sign in to see',
   'you need to log in', 'please sign in', 'please log in',
+  'continue watching', 'more photos, videos, and ways to connect',
 ];
 
 export function scanText(element: Element): TextScanResult {

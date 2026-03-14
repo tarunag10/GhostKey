@@ -8,6 +8,7 @@ function makeCandidate(overrides: Partial<DetectorScores> = {}): CandidateBlocke
   const div = document.createElement('div');
   return {
     element: div,
+    ruleWeight: 0,
     signature: 'test-sig',
     scores: {
       viewportCoverage: 0.8,

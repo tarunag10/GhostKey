@@ -87,3 +87,27 @@ All implementation steps, changes, and decisions are documented here.
 - `npm test` — 26/26 tests pass (4 test files)
 - `npm run build:chrome` — produces loadable extension in dist/chrome/
 - `npm run validate:rules` — all 7 rule packs valid
+
+---
+
+## 2026-03-14: Real-World Testing Fixes
+
+### LinkedIn Fix: Side-panel sign-in card
+- User reported fixed bottom-right sign-in card (`.cta-modal`, `[data-id="sign-in-card"]`) not being suppressed
+- Root cause: rule-pack selector weights weren't included in scoring
+- Added `ruleWeight` field to `CandidateBlocker` type
+- Added `getRuleWeight()` method to Detector that checks element against all rule-pack selectors
+- Included `ruleWeight` in both Detector and Classifier scoring formulas
+- Added 12+ new LinkedIn selectors from real DOM inspection: `.cta-modal`, `[data-id="sign-in-card"]`, `.sign-in-card`, `form.google-auth`, `.google-one-tap__module`, etc.
+- Removed `.scaffold-layout__sidebar` from safeSelectors (was protecting auth elements)
+
+### Instagram Fix: Scroll-triggered "Continue watching" wall
+- User reported popup appearing after scrolling on profile pages
+- The popup uses obfuscated class names (`html-div`, `x1qjc9v5`, etc.) with no `role="dialog"`
+- Added "continue watching" and "more photos, videos, and ways to connect" to `STRONG_PHRASES` in textScanner
+- Added selectors targeting Instagram T&C links (`help.instagram.com`, `privacycenter.instagram.com`)
+- Added selector for the specific wrapper class combination (`div.x1qjc9v5.x1oa3qoh.x1nhvcw1`)
+
+### Results
+- All 26 tests passing
+- Chrome extension rebuilt successfully

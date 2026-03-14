@@ -35,7 +35,8 @@ export class Classifier {
       (scores.hasScrollLock ? 2 : 0) +
       (scores.hasBackdrop ? 1.5 : 0) +
       (scores.hasBlurOverlay ? 1.5 : 0) +
-      (scores.hasPointerBlock ? 1 : 0);
+      (scores.hasPointerBlock ? 1 : 0) +
+      candidate.ruleWeight;
 
     const threshold = this.aggressive ? AGGRESSIVE_THRESHOLD : CONSERVATIVE_THRESHOLD;
     const shouldSuppress = totalScore >= threshold;

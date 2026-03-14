@@ -2,6 +2,7 @@
 export interface CandidateBlocker {
   element: Element;
   scores: DetectorScores;
+  ruleWeight: number; // highest matching rule-pack selector weight
   signature: string; // unique identifier for loop detection
 }
 

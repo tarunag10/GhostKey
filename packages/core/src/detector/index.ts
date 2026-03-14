@@ -17,6 +17,7 @@ export class Detector {
       const domScores = scanDom(element, doc);
       const textScores = scanText(element);
       const behaviorScores = scanBehavior(element, doc);
+      const ruleWeight = this.getRuleWeight(element);
 
       const scores: DetectorScores = {
         ...domScores,
@@ -33,12 +34,14 @@ export class Detector {
         (scores.hasScrollLock ? 2 : 0) +
         (scores.hasBackdrop ? 1.5 : 0) +
         (scores.hasBlurOverlay ? 1.5 : 0) +
-        (scores.hasPointerBlock ? 1 : 0);
+        (scores.hasPointerBlock ? 1 : 0) +
+        ruleWeight;
 
       if (totalScore >= 3) {
         candidates.push({
           element,
           scores,
+          ruleWeight,
           signature: computeSignature(element),
         });
       }
@@ -95,5 +98,20 @@ export class Detector {
     }
 
     return result;
+  }
+
+  /** Get the highest rule-pack selector weight matching this element */
+  private getRuleWeight(element: Element): number {
+    let maxWeight = 0;
+    for (const rule of this.rules) {
+      for (const selectorRule of rule.selectors) {
+        try {
+          if (element.matches(selectorRule.selector)) {
+            maxWeight = Math.max(maxWeight, selectorRule.weight);
+          }
+        } catch { /* invalid selector */ }
+      }
+    }
+    return maxWeight;
   }
 }

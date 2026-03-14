@@ -7,6 +7,7 @@ function makeCandidate(el?: Element): CandidateBlocker {
   const element = el ?? document.createElement('div');
   return {
     element,
+    ruleWeight: 0,
     signature: 'test',
     scores: {
       viewportCoverage: 0.8, zIndex: 9999, isFixed: true, isRecentlyInserted: false,
