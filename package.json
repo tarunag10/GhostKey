@@ -12,7 +12,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "validate:rules": "node scripts/validate-rules.mjs",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "package": "npm run build:chrome && cd dist/chrome && zip -r ../../GhostKey-v1.0.0.zip . && echo '📦 GhostKey-v1.0.0.zip created'"
   },
   "devDependencies": {
     "esbuild": "^0.20.0",

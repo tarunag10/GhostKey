@@ -111,3 +111,17 @@ All implementation steps, changes, and decisions are documented here.
 ### Results
 - All 26 tests passing
 - Chrome extension rebuilt successfully
+
+---
+
+## 2026-03-15: Packaging for Distribution
+
+### Changes
+- Enabled minification (`minify: true`) and disabled source maps (`sourcemap: false`) in `scripts/build-chrome.mjs` for production builds
+- Added `npm run package` script — builds then zips `dist/chrome/` into `GhostKey-v1.0.0.zip` at project root
+- Minified output: content.js 22.2kb, background.js 997b, popup.js 1016b, options.js 809b
+- Final zip: **12KB**, contains manifest.json, content.js, background.js, popup.js/html, options.js/html, icons/
+
+### To distribute
+- Share `GhostKey-v1.0.0.zip`
+- Recipients: unzip → Chrome → `chrome://extensions` → Developer mode → Load unpacked → select folder

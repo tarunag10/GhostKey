@@ -32,8 +32,8 @@ const shared = {
   bundle: true,
   format: 'esm',
   target: 'chrome120',
-  sourcemap: true,
-  minify: false,
+  sourcemap: false,
+  minify: true,
   logLevel: 'info',
   plugins: [ghostkeyPlugin],
 };
