@@ -13,8 +13,8 @@
     "test:watch": "vitest",
     "validate:rules": "node scripts/validate-rules.mjs",
     "lint": "tsc --noEmit",
-    "clean": "rm -rf dist/chrome GhostKey-v1.0.0.zip",
-    "package": "npm run clean && npm run build:chrome && cd dist/chrome && zip -r ../../GhostKey-v1.0.0.zip . && echo '📦 GhostKey-v1.0.0.zip created'"
+    "clean": "rm -rf dist",
+    "package": "npm run clean && npm run build:chrome && cd dist/chrome && zip -r ../GhostKey-v1.0.0.zip . && echo '📦 dist/GhostKey-v1.0.0.zip created'"
   },
   "devDependencies": {
     "esbuild": "^0.20.0",

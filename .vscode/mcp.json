@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "xcodebuildmcp": {
+      "command": "npx",
+      "args": ["-y", "xcodebuildmcp@latest"]
+    }
+  }
+}

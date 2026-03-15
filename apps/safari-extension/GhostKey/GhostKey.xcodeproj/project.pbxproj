@@ -1,0 +1,1005 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5AB8E8472F670E7F0082068D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8E8462F670E7F0082068D /* AppDelegate.swift */; };
+		5AB8E8492F670E7F0082068D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8E8482F670E7F0082068D /* SceneDelegate.swift */; };
+		5AB8E84C2F670E7F0082068D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E84A2F670E7F0082068D /* LaunchScreen.storyboard */; };
+		5AB8E84F2F670E7F0082068D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E84D2F670E7F0082068D /* Main.storyboard */; };
+		5AB8E8582F670E7F0082068D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8E8572F670E7F0082068D /* AppDelegate.swift */; };
+		5AB8E85B2F670E7F0082068D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8592F670E7F0082068D /* Main.storyboard */; };
+		5AB8E8622F670E7F0082068D /* GhostKey Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5AB8E8612F670E7F0082068D /* GhostKey Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5AB8E86C2F670E7F0082068D /* GhostKey Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5AB8E86B2F670E7F0082068D /* GhostKey Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5AB8E8712F670E7F0082068D /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8362F670E7C0082068D /* Main.html */; };
+		5AB8E8722F670E7F0082068D /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8362F670E7C0082068D /* Main.html */; };
+		5AB8E8732F670E7F0082068D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8382F670E7C0082068D /* Icon.png */; };
+		5AB8E8742F670E7F0082068D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8382F670E7C0082068D /* Icon.png */; };
+		5AB8E8752F670E7F0082068D /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8392F670E7C0082068D /* Style.css */; };
+		5AB8E8762F670E7F0082068D /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8392F670E7C0082068D /* Style.css */; };
+		5AB8E8772F670E7F0082068D /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E83A2F670E7C0082068D /* Script.js */; };
+		5AB8E8782F670E7F0082068D /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E83A2F670E7C0082068D /* Script.js */; };
+		5AB8E8792F670E7F0082068D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8E83B2F670E7C0082068D /* ViewController.swift */; };
+		5AB8E87A2F670E7F0082068D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8E83B2F670E7C0082068D /* ViewController.swift */; };
+		5AB8E87B2F670E7F0082068D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E83C2F670E7F0082068D /* Assets.xcassets */; };
+		5AB8E87C2F670E7F0082068D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E83C2F670E7F0082068D /* Assets.xcassets */; };
+		5AB8E87D2F670E7F0082068D /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8E83E2F670E7F0082068D /* SafariWebExtensionHandler.swift */; };
+		5AB8E87E2F670E7F0082068D /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB8E83E2F670E7F0082068D /* SafariWebExtensionHandler.swift */; };
+		5AB8E8982F670E800082068D /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8902F670E800082068D /* popup.js */; };
+		5AB8E8992F670E800082068D /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8912F670E800082068D /* background.js */; };
+		5AB8E89A2F670E800082068D /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8922F670E800082068D /* popup.html */; };
+		5AB8E89B2F670E800082068D /* options.js in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8932F670E800082068D /* options.js */; };
+		5AB8E89C2F670E800082068D /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8942F670E800082068D /* icons */; };
+		5AB8E89D2F670E800082068D /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8952F670E800082068D /* manifest.json */; };
+		5AB8E89E2F670E800082068D /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8962F670E800082068D /* options.html */; };
+		5AB8E89F2F670E800082068D /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8972F670E800082068D /* content.js */; };
+		5AB8E8A02F670E800082068D /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8902F670E800082068D /* popup.js */; };
+		5AB8E8A12F670E800082068D /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8912F670E800082068D /* background.js */; };
+		5AB8E8A22F670E800082068D /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8922F670E800082068D /* popup.html */; };
+		5AB8E8A32F670E800082068D /* options.js in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8932F670E800082068D /* options.js */; };
+		5AB8E8A42F670E800082068D /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8942F670E800082068D /* icons */; };
+		5AB8E8A52F670E800082068D /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8952F670E800082068D /* manifest.json */; };
+		5AB8E8A62F670E800082068D /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8962F670E800082068D /* options.html */; };
+		5AB8E8A72F670E800082068D /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8E8972F670E800082068D /* content.js */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AB8E8632F670E7F0082068D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AB8E8302F670E7C0082068D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AB8E8602F670E7F0082068D;
+			remoteInfo = "GhostKey Extension (iOS)";
+		};
+		5AB8E86D2F670E7F0082068D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AB8E8302F670E7C0082068D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AB8E86A2F670E7F0082068D;
+			remoteInfo = "GhostKey Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5AB8E8842F670E7F0082068D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5AB8E8622F670E7F0082068D /* GhostKey Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB8E88B2F670E7F0082068D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5AB8E86C2F670E7F0082068D /* GhostKey Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5AB8E8372F670E7C0082068D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		5AB8E8382F670E7C0082068D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		5AB8E8392F670E7C0082068D /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		5AB8E83A2F670E7C0082068D /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		5AB8E83B2F670E7C0082068D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5AB8E83C2F670E7F0082068D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5AB8E83E2F670E7F0082068D /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		5AB8E8432F670E7F0082068D /* GhostKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhostKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB8E8462F670E7F0082068D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5AB8E8482F670E7F0082068D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5AB8E84B2F670E7F0082068D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5AB8E84E2F670E7F0082068D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5AB8E8502F670E7F0082068D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AB8E8552F670E7F0082068D /* GhostKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhostKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB8E8572F670E7F0082068D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5AB8E85A2F670E7F0082068D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5AB8E85C2F670E7F0082068D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AB8E8612F670E7F0082068D /* GhostKey Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "GhostKey Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB8E8662F670E7F0082068D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AB8E86B2F670E7F0082068D /* GhostKey Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "GhostKey Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB8E8702F670E7F0082068D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AB8E8902F670E800082068D /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = ../../../../dist/chrome/popup.js; sourceTree = "<group>"; };
+		5AB8E8912F670E800082068D /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../../../dist/chrome/background.js; sourceTree = "<group>"; };
+		5AB8E8922F670E800082068D /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = ../../../../dist/chrome/popup.html; sourceTree = "<group>"; };
+		5AB8E8932F670E800082068D /* options.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = options.js; path = ../../../../dist/chrome/options.js; sourceTree = "<group>"; };
+		5AB8E8942F670E800082068D /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = ../../../../dist/chrome/icons; sourceTree = "<group>"; };
+		5AB8E8952F670E800082068D /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../../../dist/chrome/manifest.json; sourceTree = "<group>"; };
+		5AB8E8962F670E800082068D /* options.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = options.html; path = ../../../../dist/chrome/options.html; sourceTree = "<group>"; };
+		5AB8E8972F670E800082068D /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = content.js; path = ../../../../dist/chrome/content.js; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AB8E8402F670E7F0082068D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB8E8522F670E7F0082068D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB8E85E2F670E7F0082068D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB8E8682F670E7F0082068D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5AB8E82F2F670E7C0082068D = {
+			isa = PBXGroup;
+			children = (
+				5AB8E8342F670E7C0082068D /* Shared (App) */,
+				5AB8E83D2F670E7F0082068D /* Shared (Extension) */,
+				5AB8E8452F670E7F0082068D /* iOS (App) */,
+				5AB8E8562F670E7F0082068D /* macOS (App) */,
+				5AB8E8652F670E7F0082068D /* iOS (Extension) */,
+				5AB8E86F2F670E7F0082068D /* macOS (Extension) */,
+				5AB8E8442F670E7F0082068D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5AB8E8342F670E7C0082068D /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8E83B2F670E7C0082068D /* ViewController.swift */,
+				5AB8E83C2F670E7F0082068D /* Assets.xcassets */,
+				5AB8E8352F670E7C0082068D /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		5AB8E8352F670E7C0082068D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8E8362F670E7C0082068D /* Main.html */,
+				5AB8E8382F670E7C0082068D /* Icon.png */,
+				5AB8E8392F670E7C0082068D /* Style.css */,
+				5AB8E83A2F670E7C0082068D /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5AB8E83D2F670E7F0082068D /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8E88F2F670E800082068D /* Resources */,
+				5AB8E83E2F670E7F0082068D /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		5AB8E8442F670E7F0082068D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8E8432F670E7F0082068D /* GhostKey.app */,
+				5AB8E8552F670E7F0082068D /* GhostKey.app */,
+				5AB8E8612F670E7F0082068D /* GhostKey Extension.appex */,
+				5AB8E86B2F670E7F0082068D /* GhostKey Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AB8E8452F670E7F0082068D /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8E8462F670E7F0082068D /* AppDelegate.swift */,
+				5AB8E8482F670E7F0082068D /* SceneDelegate.swift */,
+				5AB8E84A2F670E7F0082068D /* LaunchScreen.storyboard */,
+				5AB8E84D2F670E7F0082068D /* Main.storyboard */,
+				5AB8E8502F670E7F0082068D /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		5AB8E8562F670E7F0082068D /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8E8572F670E7F0082068D /* AppDelegate.swift */,
+				5AB8E8592F670E7F0082068D /* Main.storyboard */,
+				5AB8E85C2F670E7F0082068D /* Info.plist */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		5AB8E8652F670E7F0082068D /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8E8662F670E7F0082068D /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		5AB8E86F2F670E7F0082068D /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8E8702F670E7F0082068D /* Info.plist */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		5AB8E88F2F670E800082068D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8E8902F670E800082068D /* popup.js */,
+				5AB8E8912F670E800082068D /* background.js */,
+				5AB8E8922F670E800082068D /* popup.html */,
+				5AB8E8932F670E800082068D /* options.js */,
+				5AB8E8942F670E800082068D /* icons */,
+				5AB8E8952F670E800082068D /* manifest.json */,
+				5AB8E8962F670E800082068D /* options.html */,
+				5AB8E8972F670E800082068D /* content.js */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5AB8E8422F670E7F0082068D /* GhostKey (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AB8E8852F670E7F0082068D /* Build configuration list for PBXNativeTarget "GhostKey (iOS)" */;
+			buildPhases = (
+				5AB8E83F2F670E7F0082068D /* Sources */,
+				5AB8E8402F670E7F0082068D /* Frameworks */,
+				5AB8E8412F670E7F0082068D /* Resources */,
+				5AB8E8842F670E7F0082068D /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AB8E8642F670E7F0082068D /* PBXTargetDependency */,
+			);
+			name = "GhostKey (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "GhostKey (iOS)";
+			productReference = 5AB8E8432F670E7F0082068D /* GhostKey.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5AB8E8542F670E7F0082068D /* GhostKey (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AB8E88C2F670E7F0082068D /* Build configuration list for PBXNativeTarget "GhostKey (macOS)" */;
+			buildPhases = (
+				5AB8E8512F670E7F0082068D /* Sources */,
+				5AB8E8522F670E7F0082068D /* Frameworks */,
+				5AB8E8532F670E7F0082068D /* Resources */,
+				5AB8E88B2F670E7F0082068D /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AB8E86E2F670E7F0082068D /* PBXTargetDependency */,
+			);
+			name = "GhostKey (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "GhostKey (macOS)";
+			productReference = 5AB8E8552F670E7F0082068D /* GhostKey.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5AB8E8602F670E7F0082068D /* GhostKey Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AB8E8812F670E7F0082068D /* Build configuration list for PBXNativeTarget "GhostKey Extension (iOS)" */;
+			buildPhases = (
+				5AB8E85D2F670E7F0082068D /* Sources */,
+				5AB8E85E2F670E7F0082068D /* Frameworks */,
+				5AB8E85F2F670E7F0082068D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GhostKey Extension (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "GhostKey Extension (iOS)";
+			productReference = 5AB8E8612F670E7F0082068D /* GhostKey Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5AB8E86A2F670E7F0082068D /* GhostKey Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AB8E8882F670E7F0082068D /* Build configuration list for PBXNativeTarget "GhostKey Extension (macOS)" */;
+			buildPhases = (
+				5AB8E8672F670E7F0082068D /* Sources */,
+				5AB8E8682F670E7F0082068D /* Frameworks */,
+				5AB8E8692F670E7F0082068D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GhostKey Extension (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "GhostKey Extension (macOS)";
+			productReference = 5AB8E86B2F670E7F0082068D /* GhostKey Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AB8E8302F670E7C0082068D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					5AB8E8422F670E7F0082068D = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					5AB8E8542F670E7F0082068D = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					5AB8E8602F670E7F0082068D = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					5AB8E86A2F670E7F0082068D = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
+			buildConfigurationList = 5AB8E8332F670E7C0082068D /* Build configuration list for PBXProject "GhostKey" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5AB8E82F2F670E7C0082068D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5AB8E8442F670E7F0082068D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AB8E8422F670E7F0082068D /* GhostKey (iOS) */,
+				5AB8E8542F670E7F0082068D /* GhostKey (macOS) */,
+				5AB8E8602F670E7F0082068D /* GhostKey Extension (iOS) */,
+				5AB8E86A2F670E7F0082068D /* GhostKey Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AB8E8412F670E7F0082068D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB8E8732F670E7F0082068D /* Icon.png in Resources */,
+				5AB8E84C2F670E7F0082068D /* LaunchScreen.storyboard in Resources */,
+				5AB8E8712F670E7F0082068D /* Main.html in Resources */,
+				5AB8E8772F670E7F0082068D /* Script.js in Resources */,
+				5AB8E87B2F670E7F0082068D /* Assets.xcassets in Resources */,
+				5AB8E84F2F670E7F0082068D /* Main.storyboard in Resources */,
+				5AB8E8752F670E7F0082068D /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB8E8532F670E7F0082068D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB8E8742F670E7F0082068D /* Icon.png in Resources */,
+				5AB8E8762F670E7F0082068D /* Style.css in Resources */,
+				5AB8E85B2F670E7F0082068D /* Main.storyboard in Resources */,
+				5AB8E8782F670E7F0082068D /* Script.js in Resources */,
+				5AB8E87C2F670E7F0082068D /* Assets.xcassets in Resources */,
+				5AB8E8722F670E7F0082068D /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB8E85F2F670E7F0082068D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB8E8A72F670E800082068D /* content.js in Resources */,
+				5AB8E8A62F670E800082068D /* options.html in Resources */,
+				5AB8E8A12F670E800082068D /* background.js in Resources */,
+				5AB8E8A32F670E800082068D /* options.js in Resources */,
+				5AB8E8A22F670E800082068D /* popup.html in Resources */,
+				5AB8E8A42F670E800082068D /* icons in Resources */,
+				5AB8E8A52F670E800082068D /* manifest.json in Resources */,
+				5AB8E8A02F670E800082068D /* popup.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB8E8692F670E7F0082068D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB8E89F2F670E800082068D /* content.js in Resources */,
+				5AB8E89E2F670E800082068D /* options.html in Resources */,
+				5AB8E8992F670E800082068D /* background.js in Resources */,
+				5AB8E89B2F670E800082068D /* options.js in Resources */,
+				5AB8E89A2F670E800082068D /* popup.html in Resources */,
+				5AB8E89C2F670E800082068D /* icons in Resources */,
+				5AB8E89D2F670E800082068D /* manifest.json in Resources */,
+				5AB8E8982F670E800082068D /* popup.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AB8E83F2F670E7F0082068D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB8E8792F670E7F0082068D /* ViewController.swift in Sources */,
+				5AB8E8472F670E7F0082068D /* AppDelegate.swift in Sources */,
+				5AB8E8492F670E7F0082068D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB8E8512F670E7F0082068D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB8E87A2F670E7F0082068D /* ViewController.swift in Sources */,
+				5AB8E8582F670E7F0082068D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB8E85D2F670E7F0082068D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB8E87D2F670E7F0082068D /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB8E8672F670E7F0082068D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB8E87E2F670E7F0082068D /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AB8E8642F670E7F0082068D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AB8E8602F670E7F0082068D /* GhostKey Extension (iOS) */;
+			targetProxy = 5AB8E8632F670E7F0082068D /* PBXContainerItemProxy */;
+		};
+		5AB8E86E2F670E7F0082068D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AB8E86A2F670E7F0082068D /* GhostKey Extension (macOS) */;
+			targetProxy = 5AB8E86D2F670E7F0082068D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5AB8E8362F670E7C0082068D /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AB8E8372F670E7C0082068D /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		5AB8E84A2F670E7F0082068D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AB8E84B2F670E7F0082068D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5AB8E84D2F670E7F0082068D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AB8E84E2F670E7F0082068D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5AB8E8592F670E7F0082068D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AB8E85A2F670E7F0082068D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5AB8E87F2F670E7F0082068D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5AB8E8802F670E7F0082068D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		5AB8E8822F670E7F0082068D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GhostKey Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tarunagarwal.ghostkey.Extension;
+				PRODUCT_NAME = "GhostKey Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5AB8E8832F670E7F0082068D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GhostKey Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tarunagarwal.ghostkey.Extension;
+				PRODUCT_NAME = "GhostKey Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5AB8E8862F670E7F0082068D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = GhostKey;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tarunagarwal.ghostkey;
+				PRODUCT_NAME = GhostKey;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5AB8E8872F670E7F0082068D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = GhostKey;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tarunagarwal.ghostkey;
+				PRODUCT_NAME = GhostKey;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5AB8E8892F670E7F0082068D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GhostKey Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tarunagarwal.ghostkey.Extension;
+				PRODUCT_NAME = "GhostKey Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5AB8E88A2F670E7F0082068D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GhostKey Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tarunagarwal.ghostkey.Extension;
+				PRODUCT_NAME = "GhostKey Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5AB8E88D2F670E7F0082068D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = GhostKey;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tarunagarwal.ghostkey;
+				PRODUCT_NAME = GhostKey;
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5AB8E88E2F670E7F0082068D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = GhostKey;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tarunagarwal.ghostkey;
+				PRODUCT_NAME = GhostKey;
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5AB8E8332F670E7C0082068D /* Build configuration list for PBXProject "GhostKey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB8E87F2F670E7F0082068D /* Debug */,
+				5AB8E8802F670E7F0082068D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AB8E8812F670E7F0082068D /* Build configuration list for PBXNativeTarget "GhostKey Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB8E8822F670E7F0082068D /* Debug */,
+				5AB8E8832F670E7F0082068D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AB8E8852F670E7F0082068D /* Build configuration list for PBXNativeTarget "GhostKey (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB8E8862F670E7F0082068D /* Debug */,
+				5AB8E8872F670E7F0082068D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AB8E8882F670E7F0082068D /* Build configuration list for PBXNativeTarget "GhostKey Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB8E8892F670E7F0082068D /* Debug */,
+				5AB8E88A2F670E7F0082068D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AB8E88C2F670E7F0082068D /* Build configuration list for PBXNativeTarget "GhostKey (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB8E88D2F670E7F0082068D /* Debug */,
+				5AB8E88E2F670E7F0082068D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5AB8E8302F670E7C0082068D /* Project object */;
+}
