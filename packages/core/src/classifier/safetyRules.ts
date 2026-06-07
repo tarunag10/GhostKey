@@ -1,7 +1,14 @@
 /** Elements that should NEVER be suppressed */
 
 const SAFE_SELECTORS = [
-  // Payment / checkout
+  // Navigation / app shell (self-only: these generic elements can appear inside modals)
+  'nav', 'header', 'footer', '[role="navigation"]', '[role="banner"]',
+  // Native dialogs
+  'dialog[open]',
+];
+
+const SAFE_CHILD_SELECTORS = [
+  // Payment / checkout (check children: container may hold payment form)
   '[class*="payment"]', '[class*="checkout"]', '[class*="billing"]',
   '[id*="payment"]', '[id*="checkout"]', '[id*="billing"]',
   'form[action*="pay"]', 'form[action*="checkout"]',
@@ -9,10 +16,6 @@ const SAFE_SELECTORS = [
   '[class*="upload"]', '[class*="file-picker"]', 'input[type="file"]',
   // Cookie consent (separate concern)
   '[class*="cookie"]', '[class*="consent"]', '[id*="cookie"]', '[id*="consent"]',
-  // Navigation / app shell
-  'nav', 'header', 'footer', '[role="navigation"]', '[role="banner"]',
-  // Native dialogs
-  'dialog[open]',
 ];
 
 const SAFE_TEXT_PATTERNS = [
@@ -22,8 +25,15 @@ const SAFE_TEXT_PATTERNS = [
 ];
 
 export function isSafeElement(element: Element): boolean {
-  // Check selectors
   for (const sel of SAFE_SELECTORS) {
+    try {
+      if (element.matches(sel)) {
+        return true;
+      }
+    } catch { /* invalid selector */ }
+  }
+
+  for (const sel of SAFE_CHILD_SELECTORS) {
     try {
       if (element.matches(sel) || element.querySelector(sel)) {
         return true;
@@ -31,11 +41,9 @@ export function isSafeElement(element: Element): boolean {
     } catch { /* invalid selector */ }
   }
 
-  // Check text content for payment/checkout keywords
   const text = (element.textContent || '').slice(0, 2000).toLowerCase();
   for (const pattern of SAFE_TEXT_PATTERNS) {
     if (pattern.test(text)) {
-      // Only safe if it has actual payment-specific inputs (not just any text input)
       if (element.querySelector('input[name*="card"], input[name*="cvv"], input[name*="expir"], input[name*="billing"], [data-testid*="payment"]')) {
         return true;
       }

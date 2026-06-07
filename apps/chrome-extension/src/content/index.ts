@@ -14,76 +14,72 @@ let observer: DomObserver;
 let enabled = true;
 
 async function init() {
-  const settings = await storageFacade.getSettings();
-  enabled = settings.globalEnabled && !settings.disabledSites.includes(location.hostname);
+  try {
+    const settings = await storageFacade.getSettings();
+    logger.setDebug(settings.debugMode);
+    enabled = settings.globalEnabled
+      && !settings.disabledSites.includes(location.hostname)
+      && !settings.allowlist.includes(location.hostname);
 
-  if (!enabled) {
-    logger.info('GhostKey disabled for', location.hostname);
-    return;
-  }
-
-  const rules = loadRulesForHost(location.hostname);
-  const detector = new Detector(rules);
-  const classifier = new Classifier(settings.aggressiveMode);
-  suppressor = new Suppressor();
-  restorer = new Restorer(suppressor);
-
-  function scan() {
-    const candidates = detector.scan(document);
-    let didSuppress = false;
-    for (const candidate of candidates) {
-      const decision = classifier.classify(candidate);
-      if (decision.shouldSuppress) {
-        logger.debug('Suppressing', candidate.element, 'reason:', decision.reason);
-        suppressor.suppress(candidate, decision.actions);
-        didSuppress = true;
-      }
+    if (!enabled) {
+      logger.info('GhostKey disabled for', location.hostname);
+      return;
     }
-    // After suppression, ensure page is interactive
-    if (didSuppress) {
-      restorePageInteractivity();
-    }
-  }
 
-  function restorePageInteractivity() {
-    // Remove overflow:hidden from body/html
-    for (const el of [document.body, document.documentElement]) {
-      if (el.style.overflow === 'hidden') el.style.overflow = '';
-      if (el.style.overflowY === 'hidden') el.style.overflowY = '';
+    if (observer) {
+      observer.disconnect();
     }
-    // Remove pointer-events:none from large container elements
-    document.querySelectorAll('[style*="pointer-events: none"]').forEach((el) => {
-      const htmlEl = el as HTMLElement;
-      const rect = el.getBoundingClientRect();
-      if (rect.width > window.innerWidth * 0.3 && rect.height > window.innerHeight * 0.3) {
-        htmlEl.style.pointerEvents = '';
-      }
-    });
-    // Remove position:fixed overlays with high z-index that block clicks
-    document.querySelectorAll('[style*="z-index"]').forEach((el) => {
-      const htmlEl = el as HTMLElement;
-      const z = parseInt(getComputedStyle(el).zIndex, 10);
-      if (z > 999 && htmlEl.style.display === 'none') return; // already hidden
-      if (z > 999 && !el.textContent?.trim() && getComputedStyle(el).position === 'fixed') {
-        const rect = el.getBoundingClientRect();
-        if (rect.width > window.innerWidth * 0.8 && rect.height > window.innerHeight * 0.8) {
-          htmlEl.style.display = 'none';
+
+    const rules = loadRulesForHost(location.hostname);
+    const detector = new Detector(rules);
+    const classifier = new Classifier(settings.aggressiveMode);
+    suppressor = new Suppressor();
+    restorer = new Restorer(suppressor);
+
+    function scan() {
+      const candidates = detector.scan(document);
+      const seen = new Set<string>();
+      let didSuppress = false;
+      for (const candidate of candidates) {
+        if (seen.has(candidate.signature)) continue;
+        seen.add(candidate.signature);
+        const decision = classifier.classify(candidate);
+        if (decision.shouldSuppress) {
+          logger.debug('Suppressing', candidate.element, 'reason:', decision.reason);
+          suppressor.suppress(candidate, decision.actions);
+          didSuppress = true;
         }
       }
+      if (didSuppress) {
+        restorePageInteractivity();
+      }
+    }
+
+    function restorePageInteractivity() {
+      for (const el of [document.body, document.documentElement]) {
+        if (el.style.overflow === 'hidden') el.style.overflow = '';
+        if (el.style.overflowY === 'hidden') el.style.overflowY = '';
+      }
+      document.querySelectorAll('[style*="pointer-events: none"], [style*="pointer-events:none"]').forEach((el) => {
+        const htmlEl = el as HTMLElement;
+        const rect = el.getBoundingClientRect();
+        if (rect.width > window.innerWidth * 0.5 && rect.height > window.innerHeight * 0.5) {
+          htmlEl.style.pointerEvents = '';
+        }
+      });
+    }
+
+    scan();
+
+    observer = new DomObserver(() => {
+      if (enabled) scan();
     });
+    observer.observe(document.body);
+  } catch (err) {
+    logger.error('Init failed:', err);
   }
-
-  // Initial scan
-  scan();
-
-  // Watch for new elements
-  observer = new DomObserver(() => {
-    if (enabled) scan();
-  });
-  observer.observe(document.body);
 }
 
-// Listen for messages from popup/background
 chrome.runtime.onMessage.addListener((message: Message, _sender, sendResponse) => {
   if (message.type === MessageType.UNDO_SUPPRESSION) {
     restorer?.restoreAll();
@@ -92,12 +88,13 @@ chrome.runtime.onMessage.addListener((message: Message, _sender, sendResponse) =
   return false;
 });
 
-// Listen for storage changes (e.g., site toggled)
 chrome.storage.onChanged.addListener((changes) => {
-  if (changes.disabledSites || changes.globalEnabled) {
-    // Reload behavior
+  if (changes.disabledSites || changes.globalEnabled || changes.allowlist || changes.debugMode) {
     storageFacade.getSettings().then((settings) => {
-      const shouldBeEnabled = settings.globalEnabled && !settings.disabledSites.includes(location.hostname);
+      logger.setDebug(settings.debugMode);
+      const shouldBeEnabled = settings.globalEnabled
+        && !settings.disabledSites.includes(location.hostname)
+        && !settings.allowlist.includes(location.hostname);
       if (!shouldBeEnabled && enabled) {
         restorer?.restoreAll();
         observer?.disconnect();

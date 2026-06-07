@@ -20,8 +20,6 @@ export function scanBehavior(element: Element, doc: Document): BehaviorScanResul
     body?.classList.contains('modal-open') ||
     body?.classList.contains('overflow-hidden');
 
-  // Check for backdrop/overlay siblings or parent
-  const style = getComputedStyle(element);
   const hasBackdrop = isBackdrop(element, doc);
 
   // Check for blur on body content

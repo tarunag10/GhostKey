@@ -40,6 +40,8 @@ export class Restorer {
           if (next) parent.insertBefore(action.target, next);
           else parent.appendChild(action.target);
         }
+        delete (action.target as any).__ghostkey_parent;
+        delete (action.target as any).__ghostkey_next;
         break;
       }
 
@@ -52,6 +54,23 @@ export class Restorer {
         html.style.overflowY = action.originalState.htmlOverflowY ?? '';
         if (action.originalState.bodyClass) {
           body.className = action.originalState.bodyClass;
+        }
+        break;
+      }
+
+      case SuppressionActionType.REMOVE_BACKDROP: {
+        const parent = el.parentElement;
+        if (!parent) break;
+        for (const sibling of Array.from(parent.children)) {
+          if (sibling === el) continue;
+          const cls = sibling.className?.toString().toLowerCase() || '';
+          if (cls.includes('backdrop') || cls.includes('overlay') || cls.includes('mask')) {
+            const htmlSib = sibling as HTMLElement;
+            const key = `${sibling.tagName}_display`;
+            if (action.originalState[key] !== undefined) {
+              htmlSib.style.display = action.originalState[key];
+            }
+          }
         }
         break;
       }
@@ -73,6 +92,28 @@ export class Restorer {
 
       case SuppressionActionType.RESTORE_POINTER_EVENTS: {
         document.body.style.pointerEvents = action.originalState.bodyPointerEvents ?? '';
+        const selectors = ['main', '#root', '#app', '#__next', '[role="main"]', '.App', '[data-test-id="app"]', '#__nuxt', '#___gatsby'];
+        for (const sel of selectors) {
+          const key = `${sel}_pe`;
+          if (action.originalState[key] !== undefined) {
+            const target = document.querySelector(sel) as HTMLElement | null;
+            if (target) target.style.pointerEvents = action.originalState[key];
+          }
+        }
+        for (const [key, value] of Object.entries(action.originalState)) {
+          if (key.startsWith('dynamic_')) {
+            const allFixed = document.querySelectorAll('[style*="pointer-events"]');
+            for (const dynEl of allFixed) {
+              const htmlEl = dynEl as HTMLElement;
+              if (htmlEl.style.pointerEvents === 'none') {
+                const rect = dynEl.getBoundingClientRect();
+                if (rect.width > window.innerWidth * 0.5 && rect.height > window.innerHeight * 0.5) {
+                  htmlEl.style.pointerEvents = value;
+                }
+              }
+            }
+          }
+        }
         break;
       }
     }
