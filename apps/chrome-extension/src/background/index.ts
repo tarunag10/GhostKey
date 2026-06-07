@@ -10,7 +10,7 @@ chrome.runtime.onMessage.addListener(
         handleToggleSite(message.hostname).then(sendResponse);
         return true;
       case MessageType.UNDO_SUPPRESSION:
-        // Forward to content script of active tab
+      case MessageType.CLEAN_PAGE:
         forwardToActiveTab(message).then(sendResponse);
         return true;
     }

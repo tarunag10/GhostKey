@@ -3,6 +3,7 @@ export enum MessageType {
   TOGGLE_SITE = 'TOGGLE_SITE',
   UNDO_SUPPRESSION = 'UNDO_SUPPRESSION',
   UPDATE_SETTINGS = 'UPDATE_SETTINGS',
+  CLEAN_PAGE = 'CLEAN_PAGE',
 }
 
 export interface Message {

@@ -6,10 +6,19 @@ import { pinterest } from './sites/pinterest.js';
 import { twitter } from './sites/twitter.js';
 import { instagram } from './sites/instagram.js';
 import { medium } from './sites/medium.js';
+import { youtube } from './sites/youtube.js';
+import { facebook } from './sites/facebook.js';
+import { tiktok } from './sites/tiktok.js';
+import { stackoverflow } from './sites/stackoverflow.js';
+import { tumblr } from './sites/tumblr.js';
+import { forbes } from './sites/forbes.js';
+import { spotify } from './sites/spotify.js';
 import { generic } from './generic/index.js';
 
 const ALL_PACKS: RulePack[] = [
-  linkedin, quora, reddit, pinterest, twitter, instagram, medium, generic,
+  linkedin, quora, reddit, pinterest, twitter, instagram, medium,
+  youtube, facebook, tiktok, stackoverflow, tumblr, forbes, spotify,
+  generic,
 ];
 
 /** Returns matching rule packs for a hostname, sorted by priority (highest first) */

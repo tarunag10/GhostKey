@@ -3,6 +3,7 @@ import { MessageType } from '@ghostkey/browser-shared/messaging/types';
 const statusDot = document.getElementById('statusDot')!;
 const siteName = document.getElementById('siteName')!;
 const toggleBtn = document.getElementById('toggleBtn')!;
+const cleanBtn = document.getElementById('cleanBtn')!;
 const undoBtn = document.getElementById('undoBtn')!;
 const stats = document.getElementById('stats')!;
 
@@ -47,8 +48,20 @@ toggleBtn.addEventListener('click', async () => {
     hostname: currentHostname,
   });
   if (response?.success) {
-    // Re-fetch status
     init();
+  }
+});
+
+cleanBtn.addEventListener('click', async () => {
+  const response = await chrome.runtime.sendMessage({
+    type: MessageType.CLEAN_PAGE,
+    hostname: currentHostname,
+  });
+  if (response?.success) {
+    stats.textContent = 'Page cleaned!';
+    setTimeout(() => init(), 1000);
+  } else {
+    stats.textContent = response?.error ?? 'Could not clean page';
   }
 });
 

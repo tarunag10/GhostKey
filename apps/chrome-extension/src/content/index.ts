@@ -12,11 +12,56 @@ let suppressor: Suppressor;
 let restorer: Restorer;
 let observer: DomObserver;
 let enabled = true;
+let detector: Detector;
+let classifier: Classifier;
+let aggressiveMode = false;
+
+function scan() {
+  if (!detector || !classifier) return;
+  const candidates = detector.scan(document);
+  const seen = new Set<string>();
+  let didSuppress = false;
+  for (const candidate of candidates) {
+    if (seen.has(candidate.signature)) continue;
+    seen.add(candidate.signature);
+    const decision = classifier.classify(candidate);
+    if (decision.shouldSuppress) {
+      logger.debug('Suppressing', candidate.element, 'reason:', decision.reason);
+      suppressor.suppress(candidate, decision.actions);
+      didSuppress = true;
+    }
+  }
+  if (didSuppress) {
+    restorePageInteractivity();
+  }
+}
+
+function cleanPage() {
+  classifier = new Classifier(aggressiveMode);
+  suppressor = new Suppressor();
+  restorer = new Restorer(suppressor);
+  scan();
+}
+
+function restorePageInteractivity() {
+  for (const el of [document.body, document.documentElement]) {
+    if (el.style.overflow === 'hidden') el.style.overflow = '';
+    if (el.style.overflowY === 'hidden') el.style.overflowY = '';
+  }
+  document.querySelectorAll('[style*="pointer-events: none"], [style*="pointer-events:none"]').forEach((el) => {
+    const htmlEl = el as HTMLElement;
+    const rect = el.getBoundingClientRect();
+    if (rect.width > window.innerWidth * 0.5 && rect.height > window.innerHeight * 0.5) {
+      htmlEl.style.pointerEvents = '';
+    }
+  });
+}
 
 async function init() {
   try {
     const settings = await storageFacade.getSettings();
     logger.setDebug(settings.debugMode);
+    aggressiveMode = settings.aggressiveMode;
     enabled = settings.globalEnabled
       && !settings.disabledSites.includes(location.hostname)
       && !settings.allowlist.includes(location.hostname);
@@ -31,43 +76,10 @@ async function init() {
     }
 
     const rules = loadRulesForHost(location.hostname);
-    const detector = new Detector(rules);
-    const classifier = new Classifier(settings.aggressiveMode);
+    detector = new Detector(rules);
+    classifier = new Classifier(aggressiveMode);
     suppressor = new Suppressor();
     restorer = new Restorer(suppressor);
-
-    function scan() {
-      const candidates = detector.scan(document);
-      const seen = new Set<string>();
-      let didSuppress = false;
-      for (const candidate of candidates) {
-        if (seen.has(candidate.signature)) continue;
-        seen.add(candidate.signature);
-        const decision = classifier.classify(candidate);
-        if (decision.shouldSuppress) {
-          logger.debug('Suppressing', candidate.element, 'reason:', decision.reason);
-          suppressor.suppress(candidate, decision.actions);
-          didSuppress = true;
-        }
-      }
-      if (didSuppress) {
-        restorePageInteractivity();
-      }
-    }
-
-    function restorePageInteractivity() {
-      for (const el of [document.body, document.documentElement]) {
-        if (el.style.overflow === 'hidden') el.style.overflow = '';
-        if (el.style.overflowY === 'hidden') el.style.overflowY = '';
-      }
-      document.querySelectorAll('[style*="pointer-events: none"], [style*="pointer-events:none"]').forEach((el) => {
-        const htmlEl = el as HTMLElement;
-        const rect = el.getBoundingClientRect();
-        if (rect.width > window.innerWidth * 0.5 && rect.height > window.innerHeight * 0.5) {
-          htmlEl.style.pointerEvents = '';
-        }
-      });
-    }
 
     scan();
 
@@ -83,6 +95,14 @@ async function init() {
 chrome.runtime.onMessage.addListener((message: Message, _sender, sendResponse) => {
   if (message.type === MessageType.UNDO_SUPPRESSION) {
     restorer?.restoreAll();
+    sendResponse({ success: true });
+  }
+  if (message.type === MessageType.CLEAN_PAGE) {
+    if (!enabled) {
+      sendResponse({ success: false, error: 'GhostKey is disabled on this site' });
+      return false;
+    }
+    cleanPage();
     sendResponse({ success: true });
   }
   return false;

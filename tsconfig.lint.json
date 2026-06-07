@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": false,
+    "declaration": false,
+    "declarationMap": false,
+    "noEmit": true
+  },
+  "include": [
+    "packages/*/src/**/*.ts",
+    "apps/chrome-extension/src/**/*.ts"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "packages/*/dist",
+    "apps/*/dist",
+    "chrome-web-store/source"
+  ]
+}
